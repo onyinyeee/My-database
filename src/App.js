@@ -4,17 +4,16 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
+ import { MainPage } from './components/pages/MainPage';
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Switch>
         <Route exact path="/">
-        <h1> hello movies</h1>
+        <MainPage />
         </Route>
-        <Route path="/new">
+        <Route path="/movie/:id">
         <h1> hello details</h1>
         </Route>
       </Switch>
