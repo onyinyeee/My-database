@@ -9,21 +9,20 @@ import GhibliContext from "../../../context/GhibliContext";
 
 export const MainPage = () => {
 
-const [movies, setMovies] = useState([]);
-  
-  //const [loading, setLoading] = useState(true);
-  const globalState = useContext(GhibliContext);
+const [movies, setMovies] = useState([]); 
+const [loading, setLoading] = useState(true);
+const globalState = useContext(GhibliContext);
 
   
 
 
   useEffect(
     ()=>{
-      getMovie();
+      getMovies();
     }, []
   );
 
-  const getMovie = async() => {
+  const getMovies = async() => {
     try {
       const response = await fetch('https://firestore.googleapis.com/v1/projects/studio-g-database/databases/(default)/documents/movies/');
       const data = await response.json();
@@ -37,17 +36,17 @@ const [movies, setMovies] = useState([]);
       setMovies(formattedData);
       
       globalState.initializeMovies(formattedData);
-      //setLoading(false);
+      setLoading(false);
 
     } catch(err) {
       console.log (err);
-      //setLoading(false);
+      setLoading(false);
     }
   }
   
   return (
     <div className="movies-page">
-      <h1 className="movies-title"> All pets</h1>
+      <h1 className="movies-title"> Studio Ghibli Movie List</h1>
      
       <div className="movies-container">
        {
@@ -56,14 +55,17 @@ const [movies, setMovies] = useState([]);
             image={movie.image.stringValue}
             name={movie.name.stringValue} 
             year={movie.year.stringValue}
-             director={movie.director.stringValue}
-              company={movie.company.stringValue} 
-              id={movie.id.stringValue}></MovieCard>
+            director={movie.director.stringValue}
+            company={movie.company.stringValue} 
+            id={movie.id.stringValue}
+            about={movie.about.stringValue}>
+                
+            </MovieCard>
           ))
        }
 
        {
-         //loading && <p>loading data..</p>
+         loading && <p>loading data..</p>
        }
 
       </div>

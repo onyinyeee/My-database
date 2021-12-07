@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {GhibliContextProvider} from './context/GhibliContext';
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <GhibliContextProvider>
     <App />
-  </React.StrictMode>,
+  </GhibliContextProvider>,
   document.getElementById('root')
 );
 

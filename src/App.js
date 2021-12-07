@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
  import { MainPage } from './components/pages/MainPage';
+ import { DetailsPage} from './components/pages/DetailsPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <MainPage />
         </Route>
         <Route path="/movie/:id">
-        <h1> hello details</h1>
+        <DetailsPage />
         </Route>
       </Switch>
     </Router>

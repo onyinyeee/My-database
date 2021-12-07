@@ -5,36 +5,22 @@ import { useContext } from 'react';
 import GhibliContext from '../../context/GhibliContext';
 
 export const MovieCard = (props) => {
-    const {image, year, name, director, company, id} = props;
+    const {image, year, name, director, company, about, id} = props;
 
     const globalState = useContext(GhibliContext);
 
 
-    const movieClicked = () => {
-
-        const movie = {
-            id,
-            name,
-            image,
-            year,
-            director,
-            company
-        }
-
-        
-        alert('movie was clicked');
-    }
+  
 
     return (
         <div className="movie">
-            <img className="movie-image" src={image} alt={name + year + "photo"}/>
+            <img className="movie-image" src={image} alt={name + company + "photo" + about}/>
             <Link to={`/movie/${id}`}>
                 <h1 className="movie-name"> {name} </h1>
             </Link>
             <p className = "movie-director"> {director}</p>
-            <p className= "movie-company"> {company} years old </p>
+            <p className= "movie-company"> {year} </p>
 
-            <Button text="See Details" type="primary" isDisabled={false} action={movieClicked}/>
         </div>
     )
 }

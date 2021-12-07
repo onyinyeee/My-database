@@ -1,0 +1,22 @@
+.movie-image{
+    
+    object-fit: cover;
+    margin-bottom: 5px;
+    width: 90%;
+    height: 90%;
+}
+
+.movie-name{
+    font-size: 1.3rem;
+    padding: 5px;
+    text-transform: uppercase;
+    color: rgb(214, 214, 214);
+}
+
+.movie {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px 10px;
+
+
+}

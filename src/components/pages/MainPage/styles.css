@@ -1,0 +1,20 @@
+.movies-page {
+    padding: 10px;
+    background-color: dimgrey;
+}
+
+
+
+.movies-conatiner {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px 10px;
+
+}
+
+.movies-title{
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ddd;
+}
