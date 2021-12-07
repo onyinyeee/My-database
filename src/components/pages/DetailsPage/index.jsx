@@ -26,6 +26,9 @@ export const DetailsPage = (props) => {
                 <h1 className="movies-title"> {movie.name?.stringValue}</h1>
                 <img src={movie.image?.stringValue} alt="movie photo"/>
                 <p className="description">{movie.about?.stringValue}</p>
+                <Link to={`/`}>
+                <Button text="Done" type="primary" isDisabled={false}/>
+             </Link>
                 
 
 
