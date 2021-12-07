@@ -15,9 +15,10 @@ button:disabled:hover {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-    width: 100%;
+    width: 50%;
     margin-top: 1rem;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 .secondary {
     border: none;

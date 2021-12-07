@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import "./styles.css";
 import GhibliContext from '../../../context/GhibliContext';
 import { Button } from '../../Button';
+import { Link } from 'react-router-dom';
 
 
 export const DetailsPage = (props) => {
@@ -25,6 +26,8 @@ export const DetailsPage = (props) => {
                 <h1 className="movies-title"> {movie.name?.stringValue}</h1>
                 <img src={movie.image?.stringValue} alt="movie photo"/>
                 <p className="description">{movie.about?.stringValue}</p>
+                
+
 
                 
 
